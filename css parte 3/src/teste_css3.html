@@ -1,0 +1,61 @@
+INDEX3.HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        p {
+            border: 2px solid red;
+            padding: 0px;
+            margin: 0px;
+        }
+        div {
+            border: px dotted blue;
+            padding: 5px;
+            margin: 5px;
+        }
+        span {
+            background-color: yellow;
+        }
+
+        .linha {
+            display:inline;
+        }
+
+        .bloco {
+            display:block;
+        }
+
+
+    </style>
+    <title>Exemplo3</title>
+</head>
+<body>
+    <code>Elementos div e p possuem o comportamento de bloco</code>
+    <div>
+        <p>Jambeiro</p>
+        <p>Paraibuna</p>
+        <p>Salesópolis</p>
+    </div>
+<code>Elemento p assumiu o comprotamento inline</code>
+<div>
+    <p class="linha">Jacareí</p> <br>
+    <p class="linha">Guararema</p> <br>
+    <p class="linha">Santa Branca</p>
+</div>
+
+<code> Elemento do tipo inline</code>
+<p>
+    span é um elemento inline: <span>Redenção da Serra</span> e <span> São
+         Luiz do Paraitinga</span>
+</p>         
+
+<code>Elementos do tipo inline com comportamento do tipo bloco</code>
+<p>
+    span é um lemento inline <span class="bloco">Cunha</span> e 
+    <span class="bloco">Lagoinha</span> mas aqui assumiu o comportamento
+    de bloco.
+</p>
+</body>
+</html>

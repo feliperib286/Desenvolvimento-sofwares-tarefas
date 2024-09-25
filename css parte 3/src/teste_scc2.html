@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exemplo</title>
+    <style>
+      span {
+        
+        width: 100px;
+        height: 100px;
+        
+        /* display: block; */
+    }
+    span:hover {
+        background-color: yellow;
+        margin: 20px;
+        padding: 30px;
+        border: 2px solid blue;
+        cursor: pointer;
+    }
+    button{
+        cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <p>
+      As propriedades margem (margem externa), padding (margin interna) e border são
+      respeitadas na horizontal nos elementos block inline.
+    </p>
+    <p>
+      Nos elementos block inline como <span>span</span> as propriedades width e
+      height não são respeitadas.
+    </p>
+    <p>
+      Veja que o resultado não possui 100px de largura e altura e não possui
+      margem vertical.
+      <br><br>
+      <button>teste
+
+      </button>
+    </p>
+  </body>
+</html>
