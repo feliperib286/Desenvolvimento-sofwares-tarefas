@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pilares do Scrum - Login e Cadastro</title>
+</head>
+<body>
+    <h1>Login e Cadastro</h1>
+
+    <!-- Cadastro de usuário -->
+    <div>
+        <h2>Cadastro</h2>
+        <label for="newUsername">Usuário:</label>
+        <input type="text" id="newUsername">
+        <label for="newPassword">Senha:</label>
+        <input type="password" id="newPassword">
+        <button id="registerBtn">Cadastrar</button>
+        <p id="registerMessage"></p>
+    </div>
+
+    <!-- Login -->
+    <div>
+        <h2>Login</h2>
+        <label for="username">Usuário:</label>
+        <input type="text" id="username">
+        <label for="password">Senha:</label>
+        <input type="password" id="password">
+        <button id="loginBtn">Entrar</button>
+        <p id="loginMessage"></p>
+    </div>
+
+    <script>
+        // Cadastro de novo usuário
+        document.getElementById('registerBtn').addEventListener('click', function() {
+            const newUsername = document.getElementById('newUsername').value;
+            const newPassword = document.getElementById('newPassword').value;
+            if (newUsername && newPassword) {
+                saveUser(newUsername, newPassword);
+                document.getElementById('registerMessage').textContent = 'Cadastro realizado com sucesso!';
+            } else {
+                document.getElementById('registerMessage').textContent = 'Preencha os campos corretamente!';
+            }
+        });
+
+        // Função para salvar usuários
+        function saveUser(username, password) {
+            const usersDB = JSON.parse(localStorage.getItem('usersDB')) || {};
+            usersDB[username] = { password: password, respostas: [] };
+            localStorage.setItem('usersDB', JSON.stringify(usersDB));
+        }
+
+        // Login
+        document.getElementById('loginBtn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if (checkLogin(username, password)) {
+                document.getElementById('loginMessage').textContent = 'Login realizado com sucesso!';
+                sessionStorage.setItem('loggedInUser', username); // Armazena o usuário logado na sessionStorage
+                window.location.href = 'index.html'; // Redireciona para a página de perguntas
+            } else {
+                document.getElementById('loginMessage').textContent = 'Usuário ou senha incorretos!';
+            }
+        });
+
+        // Função para verificar login
+        function checkLogin(username, password) {
+            const usersDB = JSON.parse(localStorage.getItem('usersDB')) || {};
+            return usersDB[username] && usersDB[username].password === password;
+        }
+    </script>
+</body>
+</html>

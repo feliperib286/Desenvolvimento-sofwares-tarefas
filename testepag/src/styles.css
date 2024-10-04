@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: aqua;
+}
+
+.container {
+    border: 2px solid #0a0a0a;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f8f5f5;
+}
+
+section {
+    border: 2px solid #080808;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #f1e9e9;
+}
+
+footer {
+    background-color:rgb(219, 219, 231);
+    border: none;
+    padding: 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Esconde as questões inicialmente */
+.evaluation {
+    display: none;
+}
+
+/* Estilo básico para o formulário de login */
+#loginForm {
+    display: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
