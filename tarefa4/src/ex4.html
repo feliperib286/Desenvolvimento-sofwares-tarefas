@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <title>Exercício 4</title>
+    <style>
+      html {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        font-family: calibri;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+      }
+
+      #menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        width: 100vw;
+        border-bottom: 1px solid #aaa;
+        box-sizing: border-box;
+        padding: 0 20px;
+      }
+
+      #titulo {
+        display: flex;
+        align-items: center;
+      }
+
+      #titulo img {
+        margin-right: 10px;
+      }
+
+      #avatar {
+        display: flex;
+        align-items: center;
+      }
+
+      #avatar img {
+        margin-left: 10px;
+        border-radius: 50%;
+      }
+
+      #corpo {
+        flex: 1;
+        width: 100vw;
+        background-color: #353131;
+      }
+
+      #rodape {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 80px;
+        width: 100vw;
+        border-top: 1px solid #aaa;
+        box-sizing: border-box;
+        background-color: #ddd;
+      }
+
+      #rodape img {
+        max-height: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="menu">
+      <div id="titulo">
+        <img src="imagens/CSS-Logo.png" alt="CSS Logo" width="60" height="60" />
+        <div>CSS3</div>
+      </div>
+      <div id="avatar">
+        <div>Bill Gates</div>
+        <img src="imagens/avatarbill.jpeg" alt="Avatar" width="42" height="42" />
+      </div>
+    </div>
+    <div id="corpo"></div>
+    <div id="rodape">
+      <img src="imagens/fatecjac.png" alt="Fatec Logo" width="87" height="41" />
+      <img src="imagens/cpc.png" alt="CPS Logo" width="85" height="56" />
+      <img src="imagens/sp.png" alt="Brasão" width="81" height="54" />
+    </div>
+  </body>
+</html>
