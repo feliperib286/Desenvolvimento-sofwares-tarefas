@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Animais</title>
+   <script src="cadastroanimais.js"></script>
+  </head>
+  <body>
+    <h1>Cadastro de Animais</h1>
+    <form id="CadAnimais" onsubmit="exibirCadastro(event)">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required /><br /><br />
+
+      <label for="ordem">Ordem</label>
+      <input type="text" id="ordem" name="ordem" required /> <br /><br />
+
+      <label for="classe">Classe</label>
+      <select id="classe" name="classe" required>
+        <option value="mamifero">Mamífero</option>
+        <option value="reptil">Réptil</option>
+        <option value="anfibio">Anfíbio</option>
+        <option value="ave">Ave</option>
+        <option value="peixe">Peixe</option>
+      </select>
+      <br /><br />
+
+      <input type="submit" value="Cadastrar" />
+      
+      <input type="reset" value="Apagar" />
+    </form>
+
+    <div id="resultado"></div>
+  </body>
+</html>
