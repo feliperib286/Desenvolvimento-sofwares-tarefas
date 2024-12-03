@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Cadastro e Classificação</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="bg-primary text-white">
+    <!-- Cabeçalho -->
+    <div class="container-fluid">
+      <div class="row bg-primary text-black py-3 text-center">
+        <h1>Competições Esportivas - FATEC JACAREÍ</h1>
+      </div>
+    </div>
+
+    <!-- Formulário e Tabela -->
+    <div class="container py-4 text-black">
+      <div
+        class="col-lg-9 bg-info text-center py-4 text-start rounded shadow mx-auto"
+      >
+        <form id="cadastroForm" class="my-3 fw-bold">
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome:</label>
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="idade" class="form-label">Idade:</label>
+            <input
+              type="number"
+              id="idade"
+              name="idade"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">E-mail:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="bairro" class="form-label">Bairro:</label>
+            <select id="bairro" name="bairro" class="form-select" required>
+              <option value="jardim das oliveiras">Jardim das Oliveiras</option>
+              <option value="vila romana">Vila Romana</option>
+              <option value="jardim do portal">Jardim do Portal</option>
+              <option value="jardim panorama">Jardim Panorama</option>
+            </select>
+          </div>
+          <input type="submit" value="Enviar" class="btn btn-success" />
+        </form>
+
+        <div class="mt-3">
+          <table
+            id="resultTable"
+            class="table table-striped table-bordered fw-bold"
+          >
+            <thead>
+              <tr>
+                <!-- Cabeçalho da tabela -->
+                <th>NOME</th>
+                <th>IDADE</th>
+                <th>CATEGORIA</th>
+                <th>LOCAL</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Corpo da tabela será preenchido dinamicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("cadastroForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          var nome = document.getElementById("nome").value;
+          var idade = parseInt(document.getElementById("idade").value);
+          var bairro = document.getElementById("bairro").value;
+
+          var categoria;
+          if (idade <= 18) {
+            categoria = "JUNIOR";
+          } else if (idade >= 19 && idade <= 25) {
+            categoria = "EXPERT";
+          } else {
+            categoria = "MASTER";
+          }
+
+          var local;
+          if (bairro === "jardim das oliveiras" || bairro === "vila romana") {
+            local = "ZONA SUL";
+          } else {
+            local = "ZONA OESTE";
+          }
+
+          var table = document
+            .getElementById("resultTable")
+            .getElementsByTagName("tbody")[0];
+          var newRow = table.insertRow();
+
+          var cell1 = newRow.insertCell(0);
+          var cell2 = newRow.insertCell(1);
+          var cell3 = newRow.insertCell(2);
+          var cell4 = newRow.insertCell(3);
+
+          cell1.innerHTML = nome;
+          cell2.innerHTML = idade;
+          cell3.innerHTML = categoria;
+          cell4.innerHTML = local;
+        });
+    </script>
+  </body>
+</html>
